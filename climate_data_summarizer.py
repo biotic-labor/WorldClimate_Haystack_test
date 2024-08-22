@@ -4,7 +4,7 @@ from haystack import Pipeline
 from haystack.components.builders import PromptBuilder
 from haystack.components.generators.openai import OpenAIGenerator
 from components.climate_service_api_fetcher import ClimateServiceAPIFetcher
-
+import json
 warnings.filterwarnings('ignore')
 load_env()
 
@@ -45,7 +45,7 @@ def summarize_climate_data(location: object, query_type: str) :
     output = climate_suggester.run({"climateServiceAPIFetcher": {"location":location, "query_type": query_type}})
 
     print(output["llm"]["replies"][0])
-    return output
+    return output["llm"]["replies"][0]
 
 
 
