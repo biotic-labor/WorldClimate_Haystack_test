@@ -21,6 +21,8 @@ query_types = {
         "prompt_value": "Maximum Temperature",
     }, "tempmin":{
         "prompt_value": "Minimum Temperature",
+    }, "dew":{
+        "prompt_value": "Dew Point",
     }
 }
 
